@@ -3,7 +3,7 @@
 //const eleman=document.querySelector("li:nth-child(2)");
 //eleman.style.backgroundColor="lightgray";
 //const eleman=document.querySelector("li:nth-child(odd)");Sadece seçicinin belirttiği ilk elemanı seçer.
-const eleman = document.querySelectorAll("li:nth-child(odd)");//Seçicinin belirttiği tüm elemanları seçer. Burada listenin tek elemanlarını seçtik.
+/*const eleman = document.querySelectorAll("li:nth-child(odd)");//Seçicinin belirttiği tüm elemanları seçer. Burada listenin tek elemanlarını seçtik.
 eleman.forEach(function (item) {//döngü ile dönen dizinin elemanlarına ulaştık.
     item.style.backgroundColor = "lightgray";
 });
@@ -14,7 +14,7 @@ function myFunction() {
     document.querySelector("a[href='https://www.w3schools.com']").style.color = "green";//href özelliğinin değerinie göre seçme işlemi yapıldı.
 }
 /*Yeni Element Oluşturma*/
-
+/*
 function elemanEkle() {
     let yeniEleman = document.createElement("li");
     yeniEleman.className = "list-group-item";
@@ -32,7 +32,7 @@ function elemanEkle() {
 
 }
 /* Varolan Elementi Silme */
-
+/*
 function elemanSil() {
     const liste = document.querySelector("ul.list-group");
     const listeninCocuklari = liste.children;
@@ -46,7 +46,7 @@ function elemanSil() {
 }
 
 /* Element Değiştirme */
-
+/*
 function elemanGuncelle(){
     /*let yeniEleman=document.createElement("li");
     yeniEleman.innerHTML="Ben yeni li etiketiyim";
@@ -55,7 +55,7 @@ function elemanGuncelle(){
     let liste=document.querySelector(".list-group");
     //console.log(liste.firstChild);
     //liste.replaceChild(yeniEleman,liste.firstElementChild);
-*/
+
     var eleman=document.querySelector(".list-group").firstElementChild;
     //eleman.removeAttribute("class");//etikete ait bir özellik silindi.
     eleman.setAttribute("id","ilkEleman");//tanımlanmış bir özellik ve değerini kullanabiliriz.
@@ -63,5 +63,25 @@ function elemanGuncelle(){
     alert(eleman.getAttribute("id"));//getAttribute ile bir özellik alınır.
     console.log(eleman.getAttributeNames());
     console.log(eleman.hasAttribute("class"));
+}
+*/
+/* Olaylar */
+const ilkEleman=document.querySelector(".list-group").firstElementChild;
+ilkEleman.onclick =function(){
+    alert("bana tıklandı");
+}
+ilkEleman.onmouseover=function(){
+    alert("benim üzerime gelindi");
+}
 
+//addEventListener metodu
+// document.addEventListener("keypress",function(e){
+//     console.log(e.keyCode);
+// });
+
+document.addEventListener("keypress",uyariGoster);
+
+function uyariGoster(e){
+    var tus=e;
+  console.log(tus.keyCode);
 }
